@@ -2,7 +2,6 @@ import React from 'react'
 import Home from '../pages/Home'
 import Login from '../pages/Login'
 import Signup from '../pages/Signup'
-
 import Contact from '../pages/Contact'
 import Doctors from '../pages/doctors/Doctors'
 import DoctorDetails from '../pages/doctors/DoctorDetails'
@@ -17,6 +16,7 @@ const Routers = () => {
       <Route path='/home' element={<Home/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/register' element={<Signup/>}/>
+
       <Route path='/contact' element={<Contact/>}/>
       <Route path='/doctors' element={<Doctors/>}/>
       <Route path='/doctors/:id' element={<DoctorDetails/>}/>

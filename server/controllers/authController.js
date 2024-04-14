@@ -12,7 +12,7 @@ const generateToken = user=>{
 }
 
 export const register = async (req,res) =>{
-const {email, password, name, role, photo, gender,longitude ,latitude } = req.body
+const {email, password, name, role, photo, gender} = req.body
 
     try {
         let user = null;
@@ -46,23 +46,13 @@ const {email, password, name, role, photo, gender,longitude ,latitude } = req.bo
 
         
         if(role==='doctor'){
-            if(!longitude || !latitude){
-                return res.status(400).json({message:"Please provide location details"})
-            }
-            
-            const location = {
-              
-                coordinates :[parseFloat(longitude) , parseFloat(latitude)]
-            }
-
             user = new Doctor({
                 name,
                 email,
                 password : hashPassword,
                 photo,
                 gender,
-                role,
-                location
+                role
             })
         }
         await user.save();

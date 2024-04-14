@@ -14,6 +14,7 @@ const useFetchData = (url)=>{
                     headers:{
                         Authorization : `Bearer ${token}`
                     }
+                    
                 })
                 const result = await res.json()
                 if(!res.ok){

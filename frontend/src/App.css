@@ -19,7 +19,10 @@ body {
   background: #fff !important;
 
 }
-
+.img{
+  width: 400px;
+  height: 325px;
+}
 .swiper-pagination-bullet-active{
   background: #0067ff !important;
   border: none !important;

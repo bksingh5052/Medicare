@@ -48,13 +48,14 @@ reviewSchema.statics.calcAverageRating = async function(doctorId){
       }
     }
   ]);
-  await Doctor.findByIdAndUpdate(doctorId,{
-    totalRating: stats[0].numOfRating,
-    averageRating: stats[0].avgRating
+
+  const doctor = await Doctor.findByIdAndUpdate(doctorId,{
+      totalRating: stats[0].numOfRating,
+      averageRating: stats[0].avgRating
   })
 }
-reviewSchema.post('save',function(){
-  this.constructor.calcAverageRating(this.doctor)
+reviewSchema.post('save',function(doc){
+  this.constructor.calcAverageRating(doc.doctor)
 })
 
 export default mongoose.model("Review", reviewSchema);

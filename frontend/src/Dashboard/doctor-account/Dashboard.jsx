@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import Loader from "../../components/Loader/Loading.jsx";
+import Loader from "../../components/loader/Loading.jsx";
 import Error from "../../components/error/Error.jsx";
 import useGetProfile from "../../hooks/useFetchData.jsx";
 import { BASE_URL } from "../../config.js";
@@ -8,12 +8,16 @@ import Tabs from "./Tabs.jsx";
 import startIcon from "../../assets/images/Star.png"
 import DoctorAbout from '../../pages/doctors/DoctorAbout.jsx'
 import Profile from "./Profile.jsx";
+import Appointments from "./Appointments.jsx";
 
 
 const Dashboard = () => {
   const { data, error, loading } = useGetProfile(
     `${BASE_URL}/doctors/profile/me`
   );
+  console.log(data)
+
+  console.log(data.appointments)
 
   const [tab, setTab] = useState("overview");
   return (
@@ -75,7 +79,7 @@ const Dashboard = () => {
                   </div>
                 )}
               </div>
-              {tab === "appointments" && <div>appoinments</div>}
+              {tab === "appointments" && <Appointments appointments={data.appointments}/>}
               {tab === "profiles" && <Profile doctorData={data}/>}
             </div>
           </div>

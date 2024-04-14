@@ -37,7 +37,7 @@ const Header = () => {
     }, {
       path: "/doctors",
       display: "Find a doctor"
-    }, {
+    },  {
       path: "/contact",
       display: "Contact"
     },

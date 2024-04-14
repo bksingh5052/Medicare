@@ -17,14 +17,29 @@ const Profile = ({doctorData}) => {
     gender: "",
     specialization: "",
     ticketPrice: 0,
-    qualifications: [],
-    experiences: [],
-    timeSlots: [],
+    qualifications: [{}],
+    experiences: [{ startingDate: "", endingDate: "", position: "", hospital: "" }],
+    timeSlots: [{}],
     about:'',
     photo: null
   });
 
-  
+  useEffect(()=>{
+    setFormData({
+      name:doctorData?.name,
+      email: doctorData?.email,
+      phone: doctorData?.phone,
+      bio: doctorData?.bio,
+      gender: doctorData?.gender,
+      specialization: doctorData?.specialization,
+      ticketPrice: doctorData?.ticketPrice,
+      qualifications: doctorData?.qualifications,
+      experiences: doctorData?.experiences,
+      timeSlots: doctorData?.timeSlots,
+      about:doctorData?.about,
+      photo: doctorData?.photo
+    })
+  },[doctorData])  
   const [selectedFile, setSelectedFile] = useState(null);
   const [file, useFile]  = useState(null)
 
@@ -97,16 +112,27 @@ const Profile = ({doctorData}) => {
   
 
 
-  const handleReusableInputChange  = (key,index, event)=>{
-    const {name, value} = event.target
-    setFormData(prev =>{
-      const updateItems = [...prev[key]]
-      updateItems[index][name] = value
-      return {
-        ...prev, [key]:updateItems
-      }
-    })
-  }
+const handleReusableInputChange = (key, index, event) => {
+    const { name, value } = event.target;
+    setFormData(prev => {
+        const updatedItems = [...prev[key]]; // Clone the array
+        if (index >= updatedItems.length) {
+            // If index is beyond the current length, add a new object
+            updatedItems.push({ [name]: value });
+        } else {
+            // If index is within the current length, update existing object
+            updatedItems[index] = {
+                ...updatedItems[index],
+                [name]: value
+            };
+        }
+        return {
+            ...prev,
+            [key]: updatedItems // Update the state with the modified array
+        };
+    });
+};
+
   const handleQualificationChange = (event, index) =>{
     handleReusableInputChange('qualifications', index, event)
   }
