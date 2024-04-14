@@ -8,6 +8,7 @@ const DoctorCard = ({ doctor }) => {
     name,
     specialty,
     avgRating,
+    distance,
     totalRating,
     photo,
     totalPatients,
@@ -19,8 +20,9 @@ const DoctorCard = ({ doctor }) => {
         <img src={photo} alt="" className="w-full" />
       </div>
       <h2 className="text-[18px] leading-[30px] lg:text-[26px] lg:leading-9 text-headingColor font-[700] mt-3 lg:mt-5">
-        {name}
+        {name}  
       </h2>
+      <p>  {distance}</p>
       <div className="mt-2 lg:mt-4 flex items-center justify-between">
         <span className="bg-[#CCF0F3] py-1 px-2 lg:py-2 lg:px-6 text-[12px] leading-4 lg:text-[16px] lg:leading-7 text-irisBlueColor font-semibold rounded">
           {specialty}
