@@ -13,7 +13,7 @@ export const doctors = [
     totalRating: 403,
     photo: doctorImg01,
     totalPatients: 600,
-    hospital: "Mount Adora Hospital, Sylhet.",
+    hospital: "PMCH Patna.",
   },
   {
     id: "02",
@@ -24,7 +24,7 @@ export const doctors = [
     totalRating: 356,
     photo: doctorImg02,
     totalPatients: 900,
-    hospital: "Mount Adora Hospital, Sylhet.",
+    hospital: "IGIMS patna.",
   },
   {
     id: "03",
@@ -35,7 +35,7 @@ export const doctors = [
     totalRating: 772,
     photo: doctorImg03,
     totalPatients: 1500,
-    hospital: "Mount Adora Hospital, Sylhet.",
+    hospital: "Paras Hospital.",
   },
   {
     id: "04",
@@ -46,6 +46,6 @@ export const doctors = [
     totalRating: 607,
     photo: doctorImg04,
     totalPatients: 900,
-    hospital: "Mount Adora Hospital, Sylhet.",
+    hospital: "Nalanda Medical College.",
   },
 ];
