@@ -81,7 +81,7 @@ const Footer = () => {
 
           <div>
             <img src={logo} alt="" />
-            <p className="text-[16px] leading-7 font-[400] text-textColor mt-4">Copyright © 2023 developed by Code Defender all rights reserved.</p>
+            <p className="text-[16px] leading-7 font-[400] text-textColor mt-4">Copyright © 2024 developed by Code Defender all rights reserved.</p>
             <div className="flex mt-4 items-center gap-3">
               {
                 socialLinks.map((link, index)=><Link to={link.path} key={index} className="w-9 h-9 border border-solid border-[#181A1E] flex items-center justify-center rounded-full group hover:bg-primaryColor hover:border-none">{link.icon}</Link>)
